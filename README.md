@@ -20,7 +20,7 @@ Dependencies:
 
 Clone the repository on your system and `cd` into it.
 
-Start the database (and its Adminer interface) with `sudo docker-compose up -d`.
+Start the database (and its [Adminer](https://www.adminer.org/en/) interface) with `sudo docker-compose up -d`.
 
 Start the webapp with `./run.sh`
 
