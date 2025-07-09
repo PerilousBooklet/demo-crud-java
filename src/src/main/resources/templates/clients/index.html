@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <title>Demo CRUD Java - Clients</title>
+  </head>
+  
+  <body style="display: flex; justify-content: center;">
+    
+    <div>
+      <!-- GO BACK -->
+      <a href="/">Back</a>
+      <!-- TITLE -->
+      <h1>Clients</h1>
+      <!-- NEW CLIENT BUTTON -->
+      <a href="/clients/create">New Client</a>
+      <!-- WIP: CHANGE TABLE BUTTON -->
+      <!-- <a href="">Change Table</a> -->
+      <!-- TABLE -->
+      <table>
+        <thead>
+          <!-- FIELDS -->
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ROWS -->
+          <tr th:each="client : ${clients}">
+            <!-- ATTRIBUTES -->
+            <td th:text="${client.id}"></td>
+            <td th:text="@{${client.firstName} + ' ' + ${client.lastName}}"></td>
+            <td th:text="${client.email}"></td>
+            <td th:text="${client.phone}"></td>
+            <td th:text="${client.address}"></td>
+            <td th:text="${client.status}"></td>
+            <td th:text="${client.createdAt.toString().substring(0,10)}"></td>
+            <!-- EDIT/DELETE BUTTONS -->
+            <td>
+              <a th:href="@{/clients/edit(id=${client.id})}">Edit</a>
+              <a th:href="@{/clients/delete(id=${client.id})}" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </body>
+  
+</html>

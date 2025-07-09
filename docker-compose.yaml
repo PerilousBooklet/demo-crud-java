@@ -1,0 +1,29 @@
+services:
+  
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb # set shared memory limit when using docker compose
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: demo-crud-java
+    volumes:
+      - .db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  
+  # demo-crud-java:
+  #   build: .
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - "8093:8080"
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8079:8080"
+    volumes:
+    - ./adminer-themes/flat/adminer.css:/var/www/html/adminer.css
