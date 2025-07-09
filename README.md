@@ -24,6 +24,10 @@ Start the database (and its Adminer interface) with `sudo docker-compose up -d`.
 
 Start the webapp with `./run.sh`
 
+The webapp is available at `http://localhost:8093`.
+
+The database interface is available at `http://localhost:8079`.
+
 ## Credits
 
 /
