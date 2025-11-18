@@ -13,7 +13,7 @@ services:
     ports:
       - "5432:5432"
   
-  # demo-crud-java:
+  # webapp:
   #   build: .
   #   depends_on:
   #     - db
@@ -25,5 +25,3 @@ services:
     restart: always
     ports:
       - "8079:8080"
-    volumes:
-    - ./adminer-themes/flat/adminer.css:/var/www/html/adminer.css

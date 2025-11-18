@@ -84,13 +84,18 @@ Create the required folders and files:
 
 - `src/main/resources`
 - `src/main/resources/static`
+- `src/main/resources/static/css`
+- `src/main/resources/static/js`
+- `src/main/resources/static/images`
 - `src/main/resources/templates`
+- `src/main/resources/templates/fragments`
 - `src/main/resources/application.properties`
 
-`application.properties` (I'm using PostgreSQL): 
+> `application.properties` (use PostgreSQL): 
 
 ```
 spring.application.name=src
+
 spring.datasource.driver-class-name=org.postgresql.Driver
 spring.datasource.url=jdbc:postgresql://localhost:5432/demo-crud-java
 spring.datasource.username=admin
@@ -98,6 +103,8 @@ spring.datasource.password=admin
 
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
+
+server.port=8093
 ```
 
 ## How to build
